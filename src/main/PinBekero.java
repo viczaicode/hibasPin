@@ -133,7 +133,7 @@ public class PinBekero extends javax.swing.JFrame {
 
     private void chbMutatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbMutatActionPerformed
         if(chbMutat.isSelected()){
-            for (int i = 0; i < pin.length(); i++) {
+                for (int i = 0; i < pin.length(); i++) {
                 int gomb = Integer.parseInt(pin.charAt(i)+"");
                 jPanel1.getComponent(gomb).setBackground(Color.red);
             }
@@ -143,8 +143,11 @@ public class PinBekero extends javax.swing.JFrame {
             for (int i = 0; i < pin.length(); i++) {
                 int gomb = Integer.parseInt(pin.charAt(i)+"");
                 jPanel1.getComponent(gomb).setBackground(Color.LIGHT_GRAY);
+
             }
+            pin = "";
         }
+        
     }//GEN-LAST:event_chbMutatActionPerformed
 
     public static void main(String args[]) {
