@@ -3,6 +3,9 @@ package main;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File; 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
@@ -11,6 +14,7 @@ public class PinBekero extends javax.swing.JFrame {
     private static int kattDb = 0;
     private static boolean mentve = false;
     private static String pin = "";
+    File fajlunk = new File("pin.txt");
     
     public PinBekero() {
         initComponents();
@@ -121,8 +125,15 @@ public class PinBekero extends javax.swing.JFrame {
                         kattDb++;
                         pin += e.getActionCommand();
                     } 
+                    
                     if(kattDb == 4) {
                         chbMutat.setEnabled(true);
+                        Path path = Path.of("jelszo.txt");
+                        try {
+                            Files.writeString(path, pin);
+                        } catch (Exception ex) {
+                            
+                        }
                         JOptionPane.showMessageDialog(rootPane, "Pin mentve!");
                     }
                     
